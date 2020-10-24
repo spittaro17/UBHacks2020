@@ -72,4 +72,12 @@ public class Vector {
 		return null;
 	}
 	
+	public void scale(int scalar) {
+		for(int i=0;i<vector.size();i++) {
+			double set = scalar*vector.get(i);
+			vector.set(i,set);
+			
+		}
+		
+	}
 }
