@@ -2,6 +2,7 @@ package Linear;
 
 import java.util.ArrayList;
 
+
 public class Vector {
 	public ArrayList<Double> vector;
 	boolean orientation = false; //false=vertical true=horizontal
@@ -51,6 +52,24 @@ public class Vector {
 		}
 		
 		return vector;
+	}
+	
+	public void transform() {
+		orientation = !orientation;
+		
+	}
+	
+	public Vector dotProduct(Vector vec){
+		if (vector.size() == vec.vector.size()) {
+			Vector v = new Vector(vector);
+			for(int i=0;i<v.vector.size();i++) {
+				double set = vector.get(i) * vec.vector.get(i);
+				v.vector.set(i, set);
+				
+			}
+			return v;
+		}
+		return null;
 	}
 	
 }
